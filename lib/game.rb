@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
+# class for directing gameplay
 class Game
-  # class for directing gameplay
   def begin
     "Welcome to Connect 4\n\n" \
     "Here is the current board: \n" \
