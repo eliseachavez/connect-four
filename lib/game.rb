@@ -6,17 +6,12 @@ require_relative '../lib/board'
 class Game
   def initialize
     @board = Board.new
+    @current_player = 'player'
   end
-  def begin
-    "Welcome to Connect 4\n\n" \
-    "Here is the current board: \n" \
-    "0 0 0 0 0 0 0\n" \
-    "0 0 0 0 0 0 0\n" \
-    "0 0 0 0 0 0 0\n" \
-    "0 0 0 0 0 0 0\n" \
-    "0 0 0 0 0 0 0\n" \
-    "0 0 0 0 0 0 0\n\n" \
-    "To choose the top left spot, for example, \n" \
+
+  def intro
+    puts "Welcome to Connect 4\n\n#{@board.print}" \
+    "\n\nTo choose the top left spot, for example, \n" \
     "the coordinate would be 1, 1 (row, column).\n" \
     "Select your coordinates one at a time.\n" \
     "Wait for the prompt.\n"
@@ -25,9 +20,12 @@ class Game
   def select(x, y)
     if @board.availabe?(x,y)
       "Tile is available!\n\n "
+      @board.set_slot(x, y. @current_player)
+      @board.print
     else
       "Tile is not available, try again!\n\n "
     end
      board.print
   end
 end
+Game.new.intro
