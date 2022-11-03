@@ -17,15 +17,19 @@ class Game
     "Wait for the prompt.\n"
   end
 
-  def select(x, y)
-    if @board.availabe?(x,y)
-      "Tile is available!\n\n "
-      @board.set_slot(x, y. @current_player)
-      @board.print
-    else
-      "Tile is not available, try again!\n\n "
-    end
-     board.print
+  def select(_, _)
+    # if @board.availabe?(x,y)
+    #   puts "Tile is available!\n\n "
+    #   @board.set_slot(x, y, @current_player)
+    #   @board.print
+    # else
+    #   puts "Tile is not available, try again!\n\n "
+    #   @board.set_slot(x, y, @current_player)
+    #   @board.print
+    # end
+    #  board.print
+    @board.set_slot(1, 1, @current_player)
+    @board.print
   end
 end
 Game.new.intro

@@ -24,26 +24,13 @@ describe Game do
     end
   end
 
-  describe '#set_slot' do
-    it 'sends message to and is received by board' do
-      board = double("board")
-      x = 1
-      y = 1
-      allow(board).to receive(:set_slot).with(x, y)
-      
-      expect(board).to receive(:set_slot).with(x, y)
-      game.set_slot
-    end
-  end
-
   describe '#select' do
     # need to make a double for board, and stub the board.available?(x,y) and board.print methods
-    xit 'reflects on the board that the correct slot was set with select method' do
+    it 'reflects on the board that the correct slot was set with select method' do
       board = Board.new
       result = game.select(1, 1)
-      string = "Tile is available!\n\n " \
-               "Here is the current board:\n" \
-               "\e[94m\u25EF\e[0m \e[91m\u25EF\e[0m \e[91m\u25EF\e[0m \e[91m\u25EF\e[0m \e[91m\u25EF\e[0m \e[91m\u25EF\e[0m \e[91m\u25EF\e[0m\n" \
+      string = "Here is the current board:\n" \
+               "\e[95m\u25EF\e[0m \e[91m\u25EF\e[0m \e[91m\u25EF\e[0m \e[91m\u25EF\e[0m \e[91m\u25EF\e[0m \e[91m\u25EF\e[0m \e[91m\u25EF\e[0m\n" \
                "\e[91m\u25EF\e[0m \e[91m\u25EF\e[0m \e[91m\u25EF\e[0m \e[91m\u25EF\e[0m \e[91m\u25EF\e[0m \e[91m\u25EF\e[0m \e[91m\u25EF\e[0m\n" \
                "\e[91m\u25EF\e[0m \e[91m\u25EF\e[0m \e[91m\u25EF\e[0m \e[91m\u25EF\e[0m \e[91m\u25EF\e[0m \e[91m\u25EF\e[0m \e[91m\u25EF\e[0m\n" \
                "\e[91m\u25EF\e[0m \e[91m\u25EF\e[0m \e[91m\u25EF\e[0m \e[91m\u25EF\e[0m \e[91m\u25EF\e[0m \e[91m\u25EF\e[0m \e[91m\u25EF\e[0m\n" \
@@ -51,7 +38,11 @@ describe Game do
                "\e[91m\u25EF\e[0m \e[91m\u25EF\e[0m \e[91m\u25EF\e[0m \e[91m\u25EF\e[0m \e[91m\u25EF\e[0m \e[91m\u25EF\e[0m \e[91m\u25EF\e[0m"
       expect(result).to eq(string)
     end
-    xit 'prints board with correct tile after selection' do
+    xit 'prints board with correct tile color according to computer after selection' do
+    end
+    xit 'prints board with correct tile color according to player after selection' do
     end
   end
+  # stops when the game wins?
+  # wins in this circumstance? diagnoal, horz, vert
 end

@@ -9,6 +9,11 @@ describe Board do
       result = board.available?(1, 1)
       expect(result).to be true
     end
+    it 'returns false when the slot is unavailable' do
+      board.set_slot(1, 1, 'player')
+      result = board.available?(1, 1)
+      expect(result).to be false
+    end
   end
   describe '#set_slot' do
     it 'returns a board hash with the slot changed at the right coordinates' do

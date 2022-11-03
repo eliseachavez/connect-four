@@ -48,7 +48,7 @@ class Board
   end
 
   def available?(x, y)
-    @board_slots[x][y] == "\e[91m\u25EF\e[0m" ? true : false # "\e[91m\u25EF\e[0m" is the available slot
+    @board_slots[x][y - 1] == "\e[91m\u25EF\e[0m" ? true : false # "\e[91m\u25EF\e[0m" is the available slot
   end
 
   def set_slot(x, y, player)
